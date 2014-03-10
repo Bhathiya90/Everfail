@@ -17,14 +17,14 @@
         <join-column name="Reg_Number" referenced-column-name="Reg_Number"/>
       </join-columns>
     </many-to-one>
-    <many-to-one field="invoice" target-entity="Invoice">
-      <join-columns>
-        <join-column name="Invoice_ID" referenced-column-name="Invoice_ID"/>
-      </join-columns>
-    </many-to-one>
     <many-to-one field="cust" target-entity="Customer">
       <join-columns>
         <join-column name="Cust_ID" referenced-column-name="Cust_ID"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="invoice" target-entity="Invoice">
+      <join-columns>
+        <join-column name="Invoice_ID" referenced-column-name="Invoice_ID"/>
       </join-columns>
     </many-to-one>
   </entity>

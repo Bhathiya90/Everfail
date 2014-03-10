@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
   <entity name="Everfail\Bundle\Entity\Customer" table="customer">
-    <id name="custId" type="string" column="Cust_ID" length="10"/>
-    <id name="eMail" type="string" column="E-mail" length="30"/>
+    <id name="custId" type="string" column="Cust_ID" length="10">
+      <generator strategy="IDENTITY"/>
+    </id>
     <field name="custName" type="string" column="Cust_Name" length="45" nullable="false"/>
+    <field name="eMail" type="string" column="E_mail" length="30" nullable="false"/>
   </entity>
 </doctrine-mapping>
