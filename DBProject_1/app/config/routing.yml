@@ -1,3 +1,7 @@
+everfailnew:
+    resource: "@EverfailnewBundle/Resources/config/routing.yml"
+    prefix:   /
+
 everfail:
     resource: "@EverfailBundle/Resources/config/routing.yml"
     prefix:   /

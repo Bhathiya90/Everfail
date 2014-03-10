@@ -612,14 +612,15 @@ class appDevDebugProjectContainer extends Container
         $c = new \Doctrine\Common\Cache\ArrayCache();
         $c->setNamespace('sf2orm_default_6499a4ec70b6099d19282c53535f2931c13d92ee818016b37e247bbe75c8b668');
 
-        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver(array('C:\\Users\\Bhathiya\\Everfail\\DBProject_1\\src\\Everfail\\Bundle\\Resources\\config\\doctrine' => 'Everfail\\Bundle\\Entity'));
+        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver(array('C:\\Users\\Bhathiya\\Everfail\\DBProject_1\\src\\Everfail\\Bundle\\Resources\\config\\doctrine' => 'Everfail\\Bundle\\Entity', 'C:\\Users\\Bhathiya\\Everfail\\DBProject_1\\src\\Everfail\\newBundle\\Resources\\config\\doctrine' => 'Everfail\\newBundle\\Entity'));
         $d->setGlobalBasename('mapping');
 
         $e = new \Doctrine\ORM\Mapping\Driver\DriverChain();
         $e->addDriver($d, 'Everfail\\Bundle\\Entity');
+        $e->addDriver($d, 'Everfail\\newBundle\\Entity');
 
         $f = new \Doctrine\ORM\Configuration();
-        $f->setEntityNamespaces(array('EverfailBundle' => 'Everfail\\Bundle\\Entity'));
+        $f->setEntityNamespaces(array('EverfailBundle' => 'Everfail\\Bundle\\Entity', 'EverfailnewBundle' => 'Everfail\\newBundle\\Entity'));
         $f->setMetadataCacheImpl($a);
         $f->setQueryCacheImpl($b);
         $f->setResultCacheImpl($c);
@@ -2952,6 +2953,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath('C:\\Users\\Bhathiya\\Everfail\\DBProject_1\\vendor\\symfony\\swiftmailer-bundle\\Symfony\\Bundle\\SwiftmailerBundle/Resources/views', 'Swiftmailer');
         $instance->addPath('C:\\Users\\Bhathiya\\Everfail\\DBProject_1\\vendor\\doctrine\\doctrine-bundle\\Doctrine\\Bundle\\DoctrineBundle/Resources/views', 'Doctrine');
         $instance->addPath('C:\\Users\\Bhathiya\\Everfail\\DBProject_1\\src\\Everfail\\Bundle/Resources/views', 'Everfail');
+        $instance->addPath('C:\\Users\\Bhathiya\\Everfail\\DBProject_1\\src\\Everfail\\newBundle/Resources/views', 'Everfailnew');
         $instance->addPath('C:\\Users\\Bhathiya\\Everfail\\DBProject_1\\src\\Acme\\DemoBundle/Resources/views', 'AcmeDemo');
         $instance->addPath('C:\\Users\\Bhathiya\\Everfail\\DBProject_1\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views', 'WebProfiler');
         $instance->addPath('C:\\Users\\Bhathiya\\Everfail\\DBProject_1\\vendor\\sensio\\distribution-bundle\\Sensio\\Bundle\\DistributionBundle/Resources/views', 'SensioDistribution');
@@ -3437,6 +3439,7 @@ class appDevDebugProjectContainer extends Container
                 'DoctrineBundle' => 'Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle',
                 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle',
                 'EverfailBundle' => 'Everfail\\Bundle\\EverfailBundle',
+                'EverfailnewBundle' => 'Everfail\\newBundle\\EverfailnewBundle',
                 'AcmeDemoBundle' => 'Acme\\DemoBundle\\AcmeDemoBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
@@ -3456,6 +3459,7 @@ class appDevDebugProjectContainer extends Container
             'mailer_password' => NULL,
             'locale' => 'en',
             'secret' => 'ThisTokenIsNotSoSecretChangeIt',
+            'database_path' => NULL,
             'controller_resolver.class' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerResolver',
             'controller_name_converter.class' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerNameParser',
             'response_listener.class' => 'Symfony\\Component\\HttpKernel\\EventListener\\ResponseListener',

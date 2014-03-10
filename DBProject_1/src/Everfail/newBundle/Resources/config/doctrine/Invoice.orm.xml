@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Everfail\newBundle\Entity\Invoice" table="invoice">
+    <id name="id" type="string" column="ID" length="10">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="paymentMethod" type="string" column="Payment_Method" length="10" nullable="true"/>
+    <field name="status" type="string" column="Status" length="10" nullable="true"/>
+    <field name="paymentDate" type="date" column="Payment_Date" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,7 @@
+parameters:
+#    everfailnew.example.class: Everfail\newBundle\Example
+
+services:
+#    everfailnew.example:
+#        class: %everfailnew.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

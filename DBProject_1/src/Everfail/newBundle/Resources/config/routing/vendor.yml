@@ -1,0 +1,30 @@
+vendor:
+    pattern:  /
+    defaults: { _controller: "EverfailnewBundle:Vendor:index" }
+
+vendor_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "EverfailnewBundle:Vendor:show" }
+
+vendor_new:
+    pattern:  /new
+    defaults: { _controller: "EverfailnewBundle:Vendor:new" }
+
+vendor_create:
+    pattern:  /create
+    defaults: { _controller: "EverfailnewBundle:Vendor:create" }
+    requirements: { _method: post }
+
+vendor_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "EverfailnewBundle:Vendor:edit" }
+
+vendor_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "EverfailnewBundle:Vendor:update" }
+    requirements: { _method: post|put }
+
+vendor_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "EverfailnewBundle:Vendor:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,30 @@
+car:
+    pattern:  /
+    defaults: { _controller: "EverfailnewBundle:Car:index" }
+
+car_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "EverfailnewBundle:Car:show" }
+
+car_new:
+    pattern:  /new
+    defaults: { _controller: "EverfailnewBundle:Car:new" }
+
+car_create:
+    pattern:  /create
+    defaults: { _controller: "EverfailnewBundle:Car:create" }
+    requirements: { _method: post }
+
+car_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "EverfailnewBundle:Car:edit" }
+
+car_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "EverfailnewBundle:Car:update" }
+    requirements: { _method: post|put }
+
+car_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "EverfailnewBundle:Car:delete" }
+    requirements: { _method: post|delete }

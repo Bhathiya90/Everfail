@@ -17,6 +17,7 @@
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="EverfailBundle">Everfail\Bundle\EverfailBundle</parameter>
+      <parameter key="EverfailnewBundle">Everfail\newBundle\EverfailnewBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -36,6 +37,7 @@
     <parameter key="mailer_password">null</parameter>
     <parameter key="locale">en</parameter>
     <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
+    <parameter key="database_path">null</parameter>
     <parameter key="controller_resolver.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver</parameter>
     <parameter key="controller_name_converter.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser</parameter>
     <parameter key="response_listener.class">Symfony\Component\HttpKernel\EventListener\ResponseListener</parameter>
@@ -2309,6 +2311,7 @@
           <call method="setEntityNamespaces">
             <argument type="collection">
               <argument key="EverfailBundle">Everfail\Bundle\Entity</argument>
+              <argument key="EverfailnewBundle">Everfail\newBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2346,6 +2349,7 @@
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
                       <argument type="collection">
                         <argument key="C:\Users\Bhathiya\Everfail\DBProject_1\src\Everfail\Bundle\Resources\config\doctrine">Everfail\Bundle\Entity</argument>
+                        <argument key="C:\Users\Bhathiya\Everfail\DBProject_1\src\Everfail\newBundle\Resources\config\doctrine">Everfail\newBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
@@ -2353,6 +2357,20 @@
                     </service>
                   </argument>
                   <argument>Everfail\Bundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="C:\Users\Bhathiya\Everfail\DBProject_1\src\Everfail\Bundle\Resources\config\doctrine">Everfail\Bundle\Entity</argument>
+                        <argument key="C:\Users\Bhathiya\Everfail\DBProject_1\src\Everfail\newBundle\Resources\config\doctrine">Everfail\newBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>Everfail\newBundle\Entity</argument>
                 </call>
               </service>
             </argument>
@@ -2733,6 +2751,10 @@
       <call method="addPath">
         <argument>C:\Users\Bhathiya\Everfail\DBProject_1\src\Everfail\Bundle/Resources/views</argument>
         <argument>Everfail</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\Bhathiya\Everfail\DBProject_1\src\Everfail\newBundle/Resources/views</argument>
+        <argument>Everfailnew</argument>
       </call>
       <call method="addPath">
         <argument>C:\Users\Bhathiya\Everfail\DBProject_1\src\Acme\DemoBundle/Resources/views</argument>
